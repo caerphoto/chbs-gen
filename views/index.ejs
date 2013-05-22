@@ -1,0 +1,35 @@
+<!doctype html>
+
+<html>
+  <head>
+    <link rel="stylesheet" href="/css/base.css">
+    <link rel="stylesheet" href="/css/chbs.css">
+    <meta name="viewport" content="width=device-width, minimum-scale=1, user-scalable=no, maximum-scale=1">
+    <script type="text/javascript" src="//use.typekit.net/hge8nui.js"></script>
+    <script type="text/javascript">try{Typekit.load();}catch(e){}</script>
+    <title>CHBS Passphrase Generator</title>
+  </head>
+
+  <body>
+    <div id="main">
+      <h1>CHBS Passphrase Generator</h1>
+
+      <div id="pp">
+        <span id="pp-phrase" title="Click to select."><%= words.join(" ") %></span>
+        <button id="pp-another" title="Get another passphrase.">↻</button>
+      </div>
+
+      <p>Generate a secure but easy-to-remember passphrase using the method
+      described in this <a href="//xkcd.com/">xkcd</a> comic:
+      <img src="/media/chbs.png" width="740" height="601" class="block" alt="Password strength comic" title="To anyone who understands information theory and security and is in an infuriating argument with someone who does not (possibly involving mixed case), I sincerely apologize.">
+      </p>
+
+      <p>Words are extracted from the <cite>all.num.o5</cite> list on <a
+        href="http://www.kilgarriff.co.uk/bnc-readme.html">this page</a>, using
+      the top 20 000 words of 5 letters or more.</p>
+    </div>
+
+    <script src="/js/chbs.js"></script>
+  </body>
+
+</html>

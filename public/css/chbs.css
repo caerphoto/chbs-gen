@@ -1,0 +1,48 @@
+img.block {
+    display: block;
+    margin: 1em auto;
+    border: 1px solid rgba( 0, 0, 0, 0.2 );
+    box-shadow: 0 1px 3px rgba( 0, 0, 0, 0.1 );
+}
+
+cite {
+    border-bottom: 1px dotted rgba( 0, 0, 0, 0.3 );
+}
+
+#pp {
+    background: #fff;
+    border: 1px solid #ccc;
+    padding: 1em;
+    margin: 1em auto;
+
+    text-align: center;
+    font-size: 150%;
+    font-weight: 300;
+    word-spacing: 0.5em;
+    line-height: 1;
+
+    position: relative;
+}
+
+#pp-phrase {
+    text-shadow:
+        0 1px 0 #fff,
+        0 2px 2px rgba( 0, 0, 0, 0.2 );
+
+    padding: 0.2em 0.5em;
+}
+
+#pp-phrase:hover {
+    background: rgba( 0, 132, 209, 0.1 );
+}
+
+#pp-phrase::selection {
+    background: rgba( 0, 132, 209, 0.4 );
+}
+#pp-another {
+    font-size: 75%;
+    position: absolute;
+    top: 1.15em;
+    right: 1em;
+}
+
