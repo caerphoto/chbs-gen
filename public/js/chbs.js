@@ -1,6 +1,7 @@
 (function( D ) {
     var another = D.getElementById("pp-another"),
-        pp_out = D.getElementById("pp-phrase");
+        pp_out = D.getElementById("pp-phrase"),
+        pp_length = D.getElementById("pp-length-output");
 
     function selectText( element ) {
         // Select the text content of the given element.
@@ -26,8 +27,9 @@
         xhr.open( "GET", "/chbs-gen?words=" + num_words, true );
 
         xhr.onload = function() {
-            var words = JSON.parse( this.responseText );
-            pp_out.innerHTML = words.join(" ");
+            var words = JSON.parse( this.responseText ).join(" ");
+            pp_out.innerHTML = words;
+            pp_length.innerHTML = words.length;
         };
 
         xhr.send();
