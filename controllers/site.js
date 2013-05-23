@@ -9,7 +9,10 @@ function getSomeWords( count, cb ) {
         return false;
     }
 
-    crypto.randomBytes( 8, function( err, bytes ) {
+    // 2 bytes per character gives a range of 0 .. 65535 for random number
+    // generation, which is then normalised into the 0 .. 20000 range of the
+    // word list.
+    crypto.randomBytes( count * 2, function( err, bytes ) {
         var words,
             num_words = word_list.length,
             i;
