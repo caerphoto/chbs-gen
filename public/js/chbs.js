@@ -2,7 +2,7 @@
     var another = D.getElementById("pp-another"),
         pp_out = D.getElementById("pp-phrase"),
         pp_length = D.getElementById("pp-length-output"),
-        pp_punc = D.getElementById("pp-punc"),
+        pp_words = D.getElementById("pp-words"),
         pp_caps = D.getElementById("pp-caps");
 
     function selectText( element ) {
@@ -54,16 +54,12 @@
 
     another.onclick = function() {
         var xhr = new XMLHttpRequest(),
-            num_words = 4;
+            num_words = pp_words.value;
 
         xhr.open( "GET", "/chbs-gen?words=" + num_words, true );
 
         xhr.onload = function() {
             var words = JSON.parse( this.responseText );
-
-            if ( pp_punc.checked ) {
-                words = addPunctuation( words );
-            }
 
             if ( pp_caps.checked ) {
                 words = addCapitals( words );
