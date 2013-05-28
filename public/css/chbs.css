@@ -1,3 +1,7 @@
+body {
+    overflow-x: hidden;
+}
+
 img.block {
     display: block;
     margin: 1em auto;
@@ -15,8 +19,8 @@ cite {
     background: #fff;
     border: 1px solid #ccc;
     padding: 1em;
-    padding-right: 2.5em;
-    margin: 1em auto;
+    margin: 1em 0;
+    margin-right: 2em;
 
     text-align: center;
     font-size: 150%;
@@ -44,7 +48,17 @@ cite {
     font-size: 75%;
     position: absolute;
     top: 1.15em;
-    right: 1em;
+    right: -3em;
+}
+
+#pp-extra-wrap {
+    position: absolute;
+    text-align: left;
+    line-height: 1.5;
+    font-size: 1rem;
+    top: 4em;
+    right: -3.5em;
+    word-spacing: 0;
 }
 
 #pp-length {

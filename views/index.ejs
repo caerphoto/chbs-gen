@@ -18,6 +18,12 @@
       <div id="pp">
         <span id="pp-phrase" title="Click to select."><%= words.join(" ") %></span>
         <button id="pp-another" title="Get another passphrase.">↻</button>
+        <div id="pp-extra-wrap">
+          <input type="checkbox" id="pp-punc" title="Randomly add punctuation to the ends of words.">
+          <label for="pp-punc">, . !</label><br>
+          <input type="checkbox" id="pp-caps" title="Randomly capitalise words.">
+          <label for="pp-caps">aA</label>
+        </div>
         <span id="pp-length">(<span id="pp-length-output"><%= words.join(" ").length %></span> characters)</span>
       </div>
 
