@@ -10,7 +10,7 @@
         var range, selection;
 
         if ( D.body.createTextRange ) { // ms
-            range = d.body.createTextRange();
+            range = D.body.createTextRange();
             range.moveToElementText( element );
             range.select();
         } else if ( window.getSelection ) { // moz, opera, webkit
@@ -20,24 +20,6 @@
             selection.removeAllRanges();
             selection.addRange(range);
         }
-    }
-
-    function addPunctuation( words ) {
-        var ends = [
-                "!",
-                ",",
-                ".",
-                "?",
-                ":",
-                ";",
-                " -",
-                "..."
-            ];
-
-        return words.map(function( word ) {
-            return word +
-                ends[ ( Math.random() * ends.length ) | 0 ];
-        });
     }
 
     function addCapitals( words ) {
@@ -53,10 +35,9 @@
     }
 
     another.onclick = function() {
-        var xhr = new XMLHttpRequest(),
-            num_words = pp_words.value;
+        var xhr = new XMLHttpRequest();
 
-        xhr.open( "GET", "/chbs-gen?words=" + num_words, true );
+        xhr.open( "GET", "/chbs-gen?words=" + pp_words.value, true );
 
         xhr.onload = function() {
             var words = JSON.parse( this.responseText );
