@@ -32,7 +32,7 @@ function getSomeWords( count, cb ) {
 
 exports.index = function( req, res ) {
     if ( req.query.words ) {
-        getSomeWords( +req.query.words, function( err, words ) {
+        getSomeWords( Math.max( +req.query.words, 20 ), function( err, words ) {
             if ( err) {
                 return res.send( 500, "Error generating phrase:" + err );
             }
