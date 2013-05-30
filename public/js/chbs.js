@@ -34,7 +34,7 @@
         });
     }
 
-    another.onclick = function() {
+    pp_words.onchange = another.onclick = function() {
         var xhr = new XMLHttpRequest();
 
         xhr.open( "GET", "/chbs-gen?words=" + pp_words.value, true );
