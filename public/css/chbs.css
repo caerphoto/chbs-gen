@@ -56,6 +56,10 @@ cite {
     word-spacing: 0;
 }
 
+#pp-another {
+  font-size: 1.1rem;
+}
+
 #pp-length {
     display: block;
     margin-top: 1em;
