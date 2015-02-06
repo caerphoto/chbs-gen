@@ -6,7 +6,7 @@
     <link rel="stylesheet" href="/css/base.css">
     <link rel="stylesheet" href="/css/chbs.css">
     <meta name="viewport" content="width=device-width, minimum-scale=1, user-scalable=no, maximum-scale=1">
-    <title>passphrase generator ‹ caer.me</title>
+    <title>passphrase generator ‹ andyf.me</title>
   </head>
 
   <body>
@@ -14,30 +14,25 @@
 
       <div id="pp">
         <span id="pp-phrase" title="Click to select."><%= words.join(" ") %></span>
-        <div id="pp-extra-wrap">
-          <button id="pp-another" title="Get another passphrase.">↻</button><br>
-
-          <input type="checkbox" id="pp-caps" title="Randomly capitalise words.">
-          <label for="pp-caps">Aa</label><br>
-
-          <label for="pp-words">Words:</label><br>
-          <select id="pp-words" value="4">
-            <option value="2">2</option>
-            <option value="3">3</option>
-            <option value="4" selected>4</option>
-            <option value="5">5</option>
-            <option value="6">6</option>
-            <option value="7">7</option>
-            <option value="8">8</option>
-          </select>
-        </div>
         <span id="pp-length">(<span id="pp-length-output"><%= words.join(" ").length %></span> characters)</span>
+      </div>
+      <div id="pp-controls">
+        <button id="pp-another" title="Get another passphrase.">↻</button>
+
+        <label for="pp-words">Number of words:</label>
+        <select id="pp-words">
+          <option value="2">2</option>
+          <option value="3">3</option>
+          <option value="4" selected>4</option>
+          <option value="5">5</option>
+          <option value="6">6</option>
+          <option value="7">7</option>
+          <option value="8">8</option>
+        </select>
       </div>
 
       <p>Generate a secure but easy-to-remember passphrase using the method
-      described in this <a href="//xkcd.com/">xkcd</a> comic:
-      <img src="/media/chbs.png" width="740" height="601" class="block" alt="Password strength comic" title="To anyone who understands information theory and security and is in an infuriating argument with someone who does not (possibly involving mixed case), I sincerely apologize.">
-      </p>
+      described in the famous <a href="http://xkcd.com/936/">xkcd comic</a>.</p>
 
       <p>Words are extracted from the <cite>all.num.o5</cite> list on <a
         href="http://www.kilgarriff.co.uk/bnc-readme.html">this page</a>, using

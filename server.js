@@ -3,7 +3,6 @@ var express = require("express"),
 
     site = require("./controllers/site");
 
-
 app.set( "views", __dirname + "/views" );
 app.set( "view engine", "ejs" );
 app.set( "trust proxy", true );
