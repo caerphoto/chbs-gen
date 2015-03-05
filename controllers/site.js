@@ -1,8 +1,11 @@
+/*jshint node: true */
 var fs = require("fs"),
     word_list = fs.readFileSync( "words.txt", {
         encoding: "utf8"
     }).split("\n"),
-    crypto = require("crypto");
+    crypto = require("crypto"),
+    days = "Mon Tues Weds Thurs Fri Sat Sun".split(" "),
+    months = "Jan Feb Mar Apr May Jun Jul Aug Sep Oct Nov Dec".split(" ");
 
 function getSomeWords( count, cb ) {
     if ( typeof cb !== "function" ) {
@@ -30,6 +33,17 @@ function getSomeWords( count, cb ) {
     });
 }
 
+function log( words, ip, load ) {
+    var now = new Date();
+    var s = load ? "\033[36m(first load)\033[0m" : "";
+    console.log(
+        "\033[33m", ip, "\033[0mon",
+        days[ now.getDay() + 1 ], now.getDate(),
+        months[ now.getMonth() ],
+        "→ [\033[32m", words.join(" "), "\033[0m]",
+        s );
+}
+
 exports.index = function( req, res ) {
     if ( req.query.words ) {
         getSomeWords( Math.min( +req.query.words, 20 ), function( err, words ) {
@@ -37,7 +51,8 @@ exports.index = function( req, res ) {
                 return res.send( 500, "Error generating phrase:" + err );
             }
 
-            res.send( words );
+            log( words );
+            res.send( words, req.ip );
         });
     } else {
         getSomeWords( 4, function( err, words ) {
@@ -45,6 +60,7 @@ exports.index = function( req, res ) {
                 words = [ "Error generating phrase:", err ];
             }
 
+            log( words, req.ip, true );
             res.render( "index", { words: words } );
         });
     }
