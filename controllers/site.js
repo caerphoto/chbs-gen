@@ -52,10 +52,8 @@ exports.index = function( req, res ) {
                 return res.send( 500, "Error generating phrase:" + err );
             }
 
-            setTimeout(function () {
-                log( words, req.ip );
-                res.send( words );
-            }, 2000);
+            log( words, req.ip );
+            res.send( words );
         });
     } else {
         getSomeWords( 4, function( err, words ) {
