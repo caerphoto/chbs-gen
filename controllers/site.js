@@ -51,8 +51,8 @@ exports.index = function( req, res ) {
                 return res.send( 500, "Error generating phrase:" + err );
             }
 
-            log( words );
-            res.send( words, req.ip );
+            log( words, req.ip );
+            res.send( words );
         });
     } else {
         getSomeWords( 4, function( err, words ) {
