@@ -42,6 +42,14 @@ cite {
 
     padding: 0.2em 0.5em 0;
     line-height: 1.5;
+
+    transition: text-shadow 0.4s;
+    transition: color 0.2s;
+}
+
+#pp-phrase.loading {
+    color: transparent;
+    text-shadow: 0 0 3px rgba( 0, 0, 0, 0.2 );
 }
 
 #pp-phrase:hover {
