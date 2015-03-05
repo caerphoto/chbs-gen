@@ -36,9 +36,11 @@ function getSomeWords( count, cb ) {
 function log( words, ip, load ) {
     var now = new Date();
     var s = load ? "\033[36m(page)\033[0m" : "";
+    var mins = now.getUTCMinutes();
+
     console.log(
         "\033[33m" + ip + "\033[0m",
-        now.getUTCHours() + ":" + now.getUTCMinutes(),
+        now.getUTCHours() + ":" + ( mins < 10 ? "0" + mins : mins ),
         days[ now.getDay() + 1 ], now.getDate(),
         months[ now.getMonth() ],
         "[\033[32m", words.join(" "), "\033[0m]",
