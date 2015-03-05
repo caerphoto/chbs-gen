@@ -1,4 +1,4 @@
-# CHBS-Gen
+# CHBS Passphrase Generator
 
 A simple app for generating passwords in the style of xkcd's famous [correct
 horse battery staple](http://xkcd.com/936/) comic.
