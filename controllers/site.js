@@ -44,7 +44,7 @@ function log( words, ip, load ) {
         days[ now.getDay() + 1 ], now.getDate(),
         months[ now.getMonth() ],
         "[\033[32m", words.join(" "), "\033[0m]",
-        "(" + words.length + " " + words.join(" ").length + ")",
+        words.length + " " + words.join(" ").length,
         s );
 }
 
