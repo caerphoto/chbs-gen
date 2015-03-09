@@ -107,6 +107,14 @@ button i {
     margin-left: 0.5em;
 }
 
+.medium-screen-i {
+    display: inline;
+}
+
+.small-screen-i {
+    display: none;
+}
+
 @media screen and (max-width: 700px) {
     p {
         margin-left: 10px;
@@ -115,6 +123,14 @@ button i {
 }
 
 @media screen and (max-width: 480px) {
+    .medium-screen-i {
+        display: none;
+    }
+
+    .small-screen-i {
+        display: inline;
+    }
+
     h1 {
         margin-bottom: 20px;
     }
