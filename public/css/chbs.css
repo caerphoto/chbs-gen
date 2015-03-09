@@ -76,9 +76,25 @@ select,
     display: inline-block;
 }
 
+button {
+    font-family: "Open Sans";
+    font-size: 16px;
+    line-height: 1;
+    padding: 0.5em 1em;
+}
+
+button i {
+    display: inline-block;
+    width: 16px;
+    height: 16px;
+    background-image: url("/media/another.png");
+    background-size: 16px;
+    text-indent: -999em;
+    margin-top: 2px;
+    margin-left: 0.3em;
+}
+
 #pp-another {
-  font-size: 1.1rem;
-  padding: 0.2em 1em;
   margin-right: 1em;
   margin-bottom: 1em;
 }
