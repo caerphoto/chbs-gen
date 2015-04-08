@@ -1,6 +1,6 @@
 /*jshint node: true */
 var fs = require("fs"),
-    word_list = fs.readFileSync( "words.txt", {
+    word_list = fs.readFileSync( "lotr.txt", {
         encoding: "utf8"
     }).split("\n"),
     crypto = require("crypto"),
