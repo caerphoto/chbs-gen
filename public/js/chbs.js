@@ -36,6 +36,16 @@
             pp_length.innerHTML = words.length;
         };
 
+        xhr.onerror = function () {
+            pp_out.className = null;
+            if (xhr.responseText) {
+                window.alert("Couldn't get a new passphrase. Server says:\n\n" +
+                    xhr.responseText);
+            } else {
+                window.alert("Couldn't get a new passphrase, don't know why :(");
+            }
+        };
+
         pp_out.className = "loading";
         xhr.send();
     };
