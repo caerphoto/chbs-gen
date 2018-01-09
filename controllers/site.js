@@ -40,12 +40,12 @@ function log( words, ip, load ) {
 
     console.log(
         "\033[33m" + ip + "\033[0m",
-        now.getUTCHours() + ":" + ( mins < 10 ? "0" + mins : mins ),
+        (days[ now.getDay() - 1 ]) || now.getDay() - 1, now.getDate(),
         days[ now.getDay() - 1 ], now.getDate(),
         months[ now.getMonth() ],
         "[\033[32m", words.join(" "), "\033[0m]",
         words.length + " " + words.join(" ").length,
-        s );
+        s);
 }
 
 exports.index = function( req, res ) {
