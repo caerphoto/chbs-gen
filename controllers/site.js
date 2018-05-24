@@ -33,13 +33,12 @@ function getSomeWords( count, cb ) {
     });
 }
 
-function log( words, ip, load ) {
+function log( words, load ) {
     var now = new Date();
     var s = load ? "\033[36m(page)\033[0m" : "";
     var mins = now.getUTCMinutes();
 
     console.log(
-        "\033[33m" + ip + "\033[0m",
         (days[ now.getDay() - 1 ]) || now.getDay() - 1, now.getDate(),
         days[ now.getDay() - 1 ], now.getDate(),
         months[ now.getMonth() ],
@@ -55,7 +54,7 @@ exports.index = function( req, res ) {
                 return res.send( 500, "Error generating phrase:" + err );
             }
 
-            log( words, req.ip );
+            log( words );
             res.send( words );
         });
     } else {
@@ -64,7 +63,7 @@ exports.index = function( req, res ) {
                 words = [ "Error generating phrase:", err ];
             }
 
-            log( words, req.ip, true );
+            log( words, true );
             res.render( "index", { words: words } );
         });
     }
