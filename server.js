@@ -1,4 +1,7 @@
 var express = require('express'),
+  path = require('path'),
+  fs = require('fs'),
+  pidfile,
   app = express(),
 
   site = require('./controllers/site');
@@ -18,3 +21,6 @@ if ( app.get('env') === 'production' ) {
   app.listen(3006);
   console.log('Listening on 3006');
 }
+
+console.log('Process ID:', process.pid);
+pidfile = fs.writeFileSync(path.join(__dirname, 'pidfile'), process.pid);
