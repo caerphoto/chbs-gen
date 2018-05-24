@@ -33,15 +33,27 @@ function getSomeWords( count, cb ) {
     });
 }
 
+function timePad(n) {
+  if (n >= 10) {
+    return n.toString();
+  }
+
+  return '0' + n;
+}
+
 function log( words, load ) {
     var now = new Date();
     var s = load ? "\033[36m(page)\033[0m" : "";
     var mins = now.getUTCMinutes();
 
     console.log(
-        (days[ now.getDay() - 1 ]) || now.getDay() - 1, now.getDate(),
         days[ now.getDay() - 1 ], now.getDate(),
         months[ now.getMonth() ],
+        [
+          now.getHours(),
+          timePad(now.getMinutes()),
+          timePad(now.getSeconds())
+        ].join(':'),
         "[\033[32m", words.join(" "), "\033[0m]",
         words.length + " " + words.join(" ").length,
         s);
