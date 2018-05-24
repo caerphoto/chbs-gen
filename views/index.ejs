@@ -13,8 +13,8 @@
       <h1><a href="/">andyf.me</a> › passphrase generator</h1>
 
       <div id="pp">
-        <span id="pp-phrase" title="Click to select."><%= words.join(" ") %></span>
-        <span id="pp-length">(<span id="pp-length-output"><%= words.join(" ").length %></span> characters)</span>
+        <span id="pp-phrase" title="Click to select."><%= words.join(' ') %></span>
+        <span id="pp-length">(<span id="pp-length-output"><%= words.join(' ').length %></span> characters)</span>
       </div>
       <div id="pp-controls">
         <button id="pp-another" title="Get another passphrase.">Another <i>↻</i></button>
@@ -34,8 +34,7 @@
       <p>Generate a secure but easy-to-remember passphrase using the method
       described in the famous <a href="http://xkcd.com/936/">xkcd comic</a>.</p>
 
-      <p><a href="https://raw.githubusercontent.com/caerphoto/chbs-gen/master/shakespeare_corpus.txt">25,987-word corpus</a>
-      extracted from the text of Shakespeare’s plays, excluding words with fewer than 4 letters.
+      <p>20,000-word source from <a href="http://www.kilgarriff.co.uk/bnc-readme.html">BNC database</a>, excluding words with fewer than 4 letters.
       Server is a Node app; source available <a href="https://github.com/caerphoto/chbs-gen">on GitHub</a>.</p>
 
     <script src="/js/chbs.js"></script>

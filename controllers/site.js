@@ -1,6 +1,6 @@
 /*jshint node: true */
 var fs = require("fs"),
-    word_list = fs.readFileSync( "shakespeare_corpus.txt", {
+    word_list = fs.readFileSync( "bnc.txt", {
         encoding: "utf8"
     }).split("\n"),
     crypto = require("crypto"),
