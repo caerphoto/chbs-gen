@@ -3,3 +3,8 @@ node_modules/
 public/css/base.css
 .DS_Store
 pidfile
+
+
+# Added by cargo
+
+/target

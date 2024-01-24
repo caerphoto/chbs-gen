@@ -23,4 +23,4 @@ if ( app.get('env') === 'production' ) {
 }
 
 console.log('Process ID:', process.pid);
-pidfile = fs.writeFileSync(path.join(__dirname, 'pidfile'), process.pid);
+pidfile = fs.writeFileSync(path.join(__dirname, 'pidfile'), String(process.pid));
